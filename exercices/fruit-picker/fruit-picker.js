@@ -15,15 +15,15 @@ import { order } from './grocer';
 /**
  * @return void
  */
-export function onSuccess() {
-  // implement the onSuccess callback to call notify with a success message
+export function onSuccess(callback) {
+  return callback(notify);
 }
 
 /**
  * @return void
  */
-export function onError() {
-  // implement the onError callback to call notify with an error message
+export function onError(callback) {
+  return callback(notify);
 }
 
 /**
@@ -33,7 +33,7 @@ export function onError() {
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  // implement the orderFromGrocer function to order the query
+  return
 }
 
 /**
