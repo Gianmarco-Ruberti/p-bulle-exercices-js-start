@@ -15,15 +15,15 @@ import { order } from './grocer';
 /**
  * @return void
  */
-export function onSuccess(callback) {
-  return callback(notify);
+export function onSuccess() {
+  notify({ message: 'SUCCESS' });
 }
 
 /**
  * @return void
  */
-export function onError(callback) {
-  return callback(notify);
+export function onError() {
+  notify({ message: 'ERROR' })
 }
 
 /**
@@ -33,7 +33,7 @@ export function onError(callback) {
  * @return void
  */
 export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
-  return
+  return order(query, onSuccessCallback, onErrorCallback);
 }
 
 /**
@@ -43,4 +43,6 @@ export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
  */
 export function postOrder(variety, quantity) {
   //implement the postOrder function to create a query and order
+  const query = {variety, quantity}
+  return order(query, onSuccess, onError)
 }
