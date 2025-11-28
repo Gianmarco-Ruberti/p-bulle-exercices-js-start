@@ -10,7 +10,7 @@
  * @returns {Visitor} the visitor that was created
  */
 export function createVisitor(name, age, ticketId) {
-  return "name :" + name + " age : " + age + " ticketId : " +ticketId
+  return { "age": +age, "name": name, "ticketId": ticketId }
 }
 
 /**
@@ -20,7 +20,8 @@ export function createVisitor(name, age, ticketId) {
  * @returns {Visitor} the visitor without a ticket
  */
 export function revokeTicket(visitor) {
-  throw new Error('Remove this line and implement the function');
+  visitor.ticketId = null
+  return visitor
 }
 
 /**
@@ -31,8 +32,13 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  throw new Error('Remove this line and implement the function');
-}
+   if (![ticketId in tickets]) {
+    return "unknown ticket id"
+  }
+  else if (tickets[ticketId] === null) {
+    return "not sold"
+  } 
+  }
 
 /**
  * Determines the status a ticket has in the ticket tracking object
