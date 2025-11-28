@@ -32,9 +32,7 @@ export function determineOddEvenCards(stack, type) {
 
   for (const card of stack) {
     const isEven = card % 2 === 0;
-    if (type === true && isEven) {
-      count++;
-    } else if (type === false && !isEven) {
+    if (type === isEven) {
       count++;
     }
   }
