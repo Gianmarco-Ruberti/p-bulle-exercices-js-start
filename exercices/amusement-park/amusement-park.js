@@ -32,13 +32,15 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-   if (![ticketId in tickets]) {
+  if (tickets[ticketId] === undefined) {
     return "unknown ticket id"
-  }
-  else if (tickets[ticketId] === null) {
+  } else if (tickets[ticketId] === null) {
     return "not sold"
-  } 
+  } else {
+    return "sold to " + tickets[ticketId]
   }
+}
+ 
 
 /**
  * Determines the status a ticket has in the ticket tracking object
@@ -49,7 +51,11 @@ export function ticketStatus(tickets, ticketId) {
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  throw new Error('Remove this line and implement the function');
+if (tickets[ticketId] === undefined || tickets[ticketId] === null) {
+    return 'invalid ticket !!!'
+  } else {
+    return tickets[ticketId]
+  }
 }
 
 /**
@@ -59,5 +65,5 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  throw new Error('Remove this line and implement the function');
+return visitor?.gtc?.version
 }
