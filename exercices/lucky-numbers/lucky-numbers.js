@@ -8,17 +8,10 @@
  * @returns {number} sum of the two arrays
  */
 export function twoSum(array1, array2) {
-  let num1 = "";
-  let num2 = "";
-  for(let i=0; i>array1.length-1; i++){
-    num1+array1[i]
-  }
-  
-  for(let i=0; array2.length-1;i++){
-    num2+array2[i]
-  }
-  let sumNum = Number(num1)+Number(num2)
-  return sumNum
+  const num1 = parseInt(array1.join(''), 10);
+  const num2 = parseInt(array2.join(''), 10);
+
+  return num1 + num2
 }
 
 /**
@@ -28,19 +21,9 @@ export function twoSum(array1, array2) {
  * @returns {boolean} whether the number is a palindrome or not
  */
 export function luckyNumber(value) {
-  if (value < 0) return false; // Les nombres négatifs ne sont pas des palindromes
-
-    let original = value;
-    let nombreInverse = 0;
-
-    while (value > 0)
-    {
-        let digit = value % 10; // Dernier chiffre
-        nombreInverse = nombreInverse * 10 + digit; // Ajoute le chiffre à l'inverse
-        value /= 10; // Retire le dernier chiffre
-    }
-
-    return original == nombreInverse;
+  const str = value.toString();
+  const reversed = str.split('').reverse().join('');
+  return str === reversed;
 }
 
 /**
@@ -51,14 +34,15 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  if (input = null){
-    return input
-  }
-  else if (Number(input) < 0){
-    return 'Must be a number besides 0'
-  }
-  else{
-    return " "
+  if (Boolean(input) == false) {
+    return "Required field";
   }
 
+  const value = Number(input);
+
+  if (Boolean(Number(input)) == false) {
+    return "Must be a number besides 0";
+  }
+
+  return "";
 }
