@@ -20,8 +20,8 @@ return "NCC-" + num
 export function randomStardate() {
   const SMIN = 41000
   const SMAX = 42000
-  let snum = SMIN + Math.random() * (SMAX-SMIN)
-  return snum
+  let Snum = SMIN + Math.random() * (SMAX-SMIN)
+  return Snum
 }
 
 /**
