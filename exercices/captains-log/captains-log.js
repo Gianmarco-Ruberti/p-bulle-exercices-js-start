@@ -6,9 +6,9 @@
  * @returns {string} the generated registry number.
  */
 export function randomShipRegistryNumber() {
-  let min = 1000
-  let max = 9999
-  let num = min + Math.random() * (max-min)
+  const MIN = 1000
+  const MAX = 9999
+  let num = MIN + Math.random() * (MAX-MIN)
 return "NCC-" + num
 }
 
@@ -18,9 +18,9 @@ return "NCC-" + num
  * @returns {number} a stardate between 41000 (inclusive) and 42000 (exclusive).
  */
 export function randomStardate() {
-  let Smin = 41000
-  let Smax = 42000
-  let Snum = Smin + Math.random() * (Smax-Smin)
+  const SMIN = 41000
+  const SMAX = 42000
+  let Snum = SMIN + Math.random() * (SMAX-SMIN)
   return Snum
 }
 
