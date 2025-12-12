@@ -4,6 +4,8 @@
 //
 
 export class BankAccount {
+  #_open;
+  #_balance;
   constructor() {
     this._open = false
   }
