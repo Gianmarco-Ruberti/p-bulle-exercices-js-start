@@ -31,6 +31,6 @@ export function randomStardate() {
  */
 export function randomPlanetClass() {
   const CLASS = "DHJKLMNRTY"
-  let Pclass = Math.floor(Math.random() * CLASS.length)
-  return CLASS[Pclass]
+  let pclass = Math.floor(Math.random() * CLASS.length)
+  return CLASS[pclass]
 }
