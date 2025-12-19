@@ -7,13 +7,13 @@ export class BankAccount {
   #isopen;
   #balance;
   constructor() {
-    this.isopen = false
+    this.#isopen = false
   }
 
   open() {
-    if(!this.isopen){
-    this.isopen = true
-    this.balance = 0
+    if(!this.#isopen){
+    this.#isopen = true
+    this.#isopen = 0
     }
     else{
       throw new ValueError();
@@ -21,8 +21,8 @@ export class BankAccount {
   }
 
   close() {
-    if(this.isopen){
-    this.isopen = false
+    if(this.#isopen){
+    this.#isopen = false
     }
     else{
       throw new ValueError();
@@ -33,8 +33,8 @@ export class BankAccount {
     if(_deposit<0){
       throw new ValueError();
     }
-    else if(this.isopen){
-    this.balance += _deposit
+    else if(this.#isopen){
+    this.#balance += _deposit
     }
     else{
       throw new ValueError();
@@ -45,11 +45,11 @@ export class BankAccount {
     if(_withdraw<0){
       throw new ValueError();
     }
-    else if(_withdraw>this.balance){
+    else if(_withdraw>this.#balance){
       throw new ValueError();
     }
     else if(this.isopen){
-      this.balance -= _withdraw
+      this.#balance -= _withdraw
     }
     else{
       throw new ValueError();
@@ -57,8 +57,8 @@ export class BankAccount {
   }
 
   get balance() {
-    if(this.isopen){
-    return this.balance
+    if(this.#isopen){
+    return this.#balance
     }
     else{
       throw new ValueError();
