@@ -34,7 +34,7 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  if (Boolean(input) == false) {
+  if (!Boolean(input)) {
     return "Required field";
   }
 
