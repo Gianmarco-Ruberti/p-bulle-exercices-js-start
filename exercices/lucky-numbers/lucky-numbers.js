@@ -38,9 +38,7 @@ export function errorMessage(input) {
     return "Required field";
   }
 
-  const value = Number(input);
-
-  if (Boolean(Number(input)) == false) {
+  if (!Boolean(Number(input))) {
     return "Must be a number besides 0";
   }
 
