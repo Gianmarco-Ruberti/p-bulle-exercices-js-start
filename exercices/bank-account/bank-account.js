@@ -13,7 +13,7 @@ export class BankAccount {
   open() {
     if(!this.#isopen){
     this.#isopen = true
-    this.#isopen = 0
+    this.#balance = 0
     }
     else{
       throw new ValueError();
