@@ -9,12 +9,11 @@
  *
  * @param {string} occasion
  * @param {string} name
- *
- * @returns {string} template string combining both parameters
+ * * @returns {string} template string combining both parameters
  */
 
 export function buildSign(occasion, name) {
-  throw new Error('Remove this line and implement the function');
+  return `Happy ${occasion} ${name}!`;
 }
 
 /**
@@ -26,7 +25,8 @@ export function buildSign(occasion, name) {
  */
 
 export function buildBirthdaySign(age) {
-  throw new Error('Remove this line and implement the function');
+  const description = age >= 50 ? 'mature' : 'young';
+  return `Happy Birthday! What a ${description} fellow you are.`;
 }
 
 /**
@@ -39,7 +39,7 @@ export function buildBirthdaySign(age) {
  */
 
 export function graduationFor(name, year) {
-  throw new Error('Remove this line and implement the function');
+  return `Congratulations ${name}!\nClass of ${year}`;
 }
 
 /**
@@ -53,5 +53,10 @@ export function graduationFor(name, year) {
  */
 
 export function costOf(sign, currency) {
-  throw new Error('Remove this line and implement the function');
+  const basePrice = 20;
+  const pricePerLetter = 2;
+  
+  const totalCost = basePrice + (sign.length * pricePerLetter);
+
+  return `Your sign costs ${totalCost.toFixed(2)} ${currency}.`;
 }
